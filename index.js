@@ -15,7 +15,7 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ typeDefs, resolvers, introspection: true, playground: true });
 server.applyMiddleware({ app, path: '/' });
 
 app.listen(process.env.PORT || 1337, () => console.log('http://localhost:1337'));
